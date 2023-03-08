@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    internal class Program
+    public class PersonalizedException : Exception
     {
-        static void Main(string[] args)
+        public PersonalizedException(string message) : base("mirá vos el error que venis a cometer: " + message)
         {
-            System system = new System();
-            system.Menu();
+
         }
     }
 }
