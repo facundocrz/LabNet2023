@@ -12,7 +12,7 @@ namespace Lab.EF.UI
         static void Main(string[] args)
         {
             System system = new System();
-            system.Menu();
+            system.Inicio();
         }
     }
 }
