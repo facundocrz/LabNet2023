@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Adivina el número</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adivina el número!!!</h1>
+        <p id="attempts"></p>
+        <div class="row">
+            <form id="guessForm">
+                <label for="guess">Tu elección:</label>
+                <input type="text" id="guess" />
+                <button type="submit" id="guessButton">Adivinar</button>
+            </form>
+        </div>
+        <p id="result" ></p>
+        <div>
+        <div >
+            <button id="restart">Reiniciar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Highscore</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="score">0</td>
+                    <td id="highscore">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Rondas anteriores:</h2>
+    <table id="roundsTable">
+        <thead>
+            <tr>
+                <th>Número secreto</th>
+                <th>intentos</th>
+                <th>score</th>
+            </tr>
+        </thead>  
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
