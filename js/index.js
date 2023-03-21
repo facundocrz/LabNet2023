@@ -57,7 +57,7 @@ const updateRounds = () => {
 
 
 const iniciarJuego = () => {
-  number = Math.round(Math.random() * 20 + 1);
+  number = Math.round(Math.random() * 100 + 1);
   attempts = 10;
   score = 100;
   document.querySelector(
