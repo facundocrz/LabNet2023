@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.Entities", "Lab.EF.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.LogicTests", "Lab.EF.LogicTests\Lab.EF.LogicTests.csproj", "{C0756544-03E8-460E-B8CA-196D3711710C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.EF.MVC", "Lab.EF.MVC\Lab.EF.MVC.csproj", "{63C51892-2171-44A7-AC55-B8BAD5BADDF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C0756544-03E8-460E-B8CA-196D3711710C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0756544-03E8-460E-B8CA-196D3711710C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0756544-03E8-460E-B8CA-196D3711710C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C51892-2171-44A7-AC55-B8BAD5BADDF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C51892-2171-44A7-AC55-B8BAD5BADDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C51892-2171-44A7-AC55-B8BAD5BADDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C51892-2171-44A7-AC55-B8BAD5BADDF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

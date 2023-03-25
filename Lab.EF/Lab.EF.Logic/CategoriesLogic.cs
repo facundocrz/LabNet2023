@@ -43,11 +43,13 @@ namespace Lab.EF.Logic
             }
         }
 
-        public void Update(Categories categoryToUpdate, string description)
+        public void Update(Categories category)
         {
+            Categories categoryToUpdate = this.GetById(category.CategoryID);
             if (categoryToUpdate != null)
             {
-                categoryToUpdate.Description = description;
+                categoryToUpdate.CategoryName = category.CategoryName;
+                categoryToUpdate.Description = category.Description;
                 _northwindContext.SaveChanges();
             } else
             {

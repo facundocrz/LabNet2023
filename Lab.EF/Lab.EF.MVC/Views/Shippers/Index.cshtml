@@ -1,0 +1,63 @@
+﻿@model List<Lab.EF.MVC.Models.ShippersViewModel>
+
+@{
+    ViewBag.Title = "Shippers";
+}
+
+<h1>Shippers</h1>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre de la companía</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+            </tr>
+        </thead>
+        @foreach (var shipper in Model)
+        {
+            <tr>
+                <th scope="row">@shipper.ID</th>
+                <td>@shipper.CompanyName</td>
+                <td>@shipper.Phone</td>
+                <td>
+                    @Html.ActionLink("Editar", "Insert", new { id = shipper.ID }, new { @class = "btn btn-secondary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Borrar", "Delete", new { id = shipper.ID },
+                             new
+                             {
+                                 @class = "btn btn-danger",
+                                 data_bs_toggle = "modal",
+                                 data_bs_target = "#confirmDeleteShipper",
+                                 data_shipperid = @shipper.ID,
+                                 data_companyname = @shipper.CompanyName
+                             })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <a href="@Url.Action("Insert")" class="btn btn-primary">Añadir transportista</a>
+</div>
+
+<div class="modal fade" id="confirmDeleteShipper" tabindex="-1" aria-labelledby="confirmDeleteShipperdeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Eliminar transportista</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Está seguro que desea borrar el transportista<strong id="companyName"></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-success" id="deleteShipperBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

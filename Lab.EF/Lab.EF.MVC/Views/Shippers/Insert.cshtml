@@ -1,0 +1,35 @@
+﻿@model Lab.EF.MVC.Models.ShippersViewModel
+
+
+@if (Model.ID == 0)
+{
+    ViewBag.Title = "Agregar transportista";
+    <h2>Añadir</h2>
+}
+else
+{
+    ViewBag.Title = "Editar transportista";
+    <h2>Editar</h2>
+}
+
+<div>
+    @using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.ID)
+        <div class="form-floating">
+            @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control", @required = "required", @id = "floatingName", @placeholder = "Nombre de la companía" })
+            @Html.LabelFor(m => m.CompanyName, "Nombre de la companía*", new { @for = "floatingName" })
+        </div>
+        <br />
+        <div class="form-floating">
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @id = "floatingDescription", @placeholder = "Teléfono" })
+            @Html.LabelFor(m => m.Phone, "Teléfono", new { @for = "floatingDescription" })
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+    }
+</div>
+<br />
+<a href="@Url.Action("Index")" class="btn btn-secondary">Volver</a>

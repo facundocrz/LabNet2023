@@ -1,0 +1,63 @@
+﻿@model List<Lab.EF.MVC.Models.CategoriesViewModel>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h1>Categories</h1>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col"> ID</th>
+                <th scope="col">Nombre de categoría</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+            </tr>
+        </thead>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row">@category.ID</th>
+                <td>@category.CategoryName</td>
+                <td>@category.Description</td>
+                <td>
+                    @Html.ActionLink("Editar", "Insert", new { id = category.ID }, new { @class = "btn btn-secondary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Borrar", "Delete", new { id = category.ID },
+                             new
+                             {
+                                 @class = "btn btn-danger",
+                                 data_bs_toggle = "modal",
+                                 data_bs_target = "#confirmDeleteCategory",
+                                 data_categoryid = @category.ID,
+                                 data_categoryname = @category.CategoryName
+                             })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <a href="@Url.Action("Insert")" class="btn btn-primary">Añadir una categoría</a>
+</div>
+
+<div class="modal fade" id="confirmDeleteCategory" tabindex="-1" aria-labelledby="confirmDeleteCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteCategoryModalLabel">Eliminar categoría</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Está seguro que desea eliminar la categoría <strong id="categoryName"></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-success" id="deleteCategoryBtn">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -45,11 +45,13 @@ namespace Lab.EF.Logic
         }
 
 
-        public void Update(Shippers shipperToUpdate, string phone)
+        public void Update(Shippers shipper)
         {
+            Shippers shipperToUpdate = this.GetById(shipper.ShipperID);
             if (shipperToUpdate != null)
             {
-                shipperToUpdate.Phone = phone;
+                shipperToUpdate.CompanyName = shipper.CompanyName;
+                shipperToUpdate.Phone = shipper.Phone;
                 _northwindContext.SaveChanges();
             }
             else

@@ -18,6 +18,6 @@ namespace Lab.EF.Logic
 
         void Delete(ID id);
 
-        void Update(T item, String str);
+        void Update(T item);
     }
 }
