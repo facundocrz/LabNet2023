@@ -1,0 +1,24 @@
+﻿@model  Lab.EF.MVC.Models.AstronomicPictureViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "NASA", FormMethod.Get))
+{
+    <label for="date">Fecha:</label>
+    <input type="date" id="date" name="date" class="form-control" value="@Model.Date">
+    <br />
+    <input type="submit" class="btn btn-dark" value="Enviar">
+}
+
+<br />
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p>Fecha: @Model.Date.ToString("dd-MM-yyyy")</p>
+        <p class="card-text">@Model.Description</p>
+    </div>
+    <img src="@Model.ImageUrl" atl="Foto astronómica del dia" class="card-img-bottom border" />
+</div>
+
