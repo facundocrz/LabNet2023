@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-card class="card">
+        <mat-card-title>
+            <button mat-icon-button (click)="goBack()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            Agregar transportista
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="shipperForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre del transportista</mat-label>
+                    <input matInput formControlName="companyName" placeholder="Ingrese el nombre del transportista">
+                    <mat-error *ngIf="shipperForm.controls['companyName'].hasError('required')">Este campo es
+                        obligatorio</mat-error>
+                    <mat-error *ngIf="shipperForm.controls['companyName'].hasError('whitespace')">No puede contener solo
+                        espacios en blanco</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput formControlName="phone" placeholder="Ingrese el Teléfono" />
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!shipperForm.valid">Guardar</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

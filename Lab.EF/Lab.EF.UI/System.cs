@@ -130,7 +130,11 @@ namespace Lab.EF.UI
             string newDesc = Console.ReadLine();
             try
             {
-                categoriesLogic.Update(categoriesLogic.GetById(id), newDesc);
+                categoriesLogic.Update(new Categories
+                {
+                    CategoryID = id,
+                    Description = newDesc
+                });
                 Console.WriteLine("Se actualizó correctamente");
             }
             catch (Exception ex)
